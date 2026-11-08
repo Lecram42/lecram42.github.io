@@ -1,0 +1,192 @@
+{
+ "souffly": {
+  "accent": "#ed115b",
+  "shots": [
+   {
+    "src": "images/shots/souffly-1.webp",
+    "w": 960,
+    "h": 444
+   },
+   {
+    "src": "images/shots/souffly-2.webp",
+    "w": 960,
+    "h": 444
+   },
+   {
+    "src": "images/shots/souffly-3.webp",
+    "w": 960,
+    "h": 444
+   },
+   {
+    "src": "images/shots/souffly-4.webp",
+    "w": 960,
+    "h": 444
+   }
+  ]
+ },
+ "cornall": {
+  "accent": "#1459ac",
+  "shots": [
+   {
+    "src": "images/shots/cornall-1.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/cornall-2.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/cornall-3.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/cornall-4.webp",
+    "w": 440,
+    "h": 952
+   }
+  ]
+ },
+ "phoneopener": {
+  "accent": "#00feff",
+  "shots": [
+   {
+    "src": "images/shots/phoneopener-1.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/phoneopener-2.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/phoneopener-3.webp",
+    "w": 440,
+    "h": 952
+   }
+  ]
+ },
+ "tiltboat": {
+  "accent": "#059ff9",
+  "shots": [
+   {
+    "src": "images/shots/tiltboat-1.webp",
+    "w": 960,
+    "h": 444
+   },
+   {
+    "src": "images/shots/tiltboat-2.webp",
+    "w": 960,
+    "h": 444
+   },
+   {
+    "src": "images/shots/tiltboat-3.webp",
+    "w": 960,
+    "h": 444
+   },
+   {
+    "src": "images/shots/tiltboat-4.webp",
+    "w": 960,
+    "h": 444
+   }
+  ]
+ },
+ "weave": {
+  "accent": "#6ba819",
+  "shots": [
+   {
+    "src": "images/shots/weave-1.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/weave-2.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/weave-3.webp",
+    "w": 440,
+    "h": 952
+   }
+  ]
+ },
+ "countit": {
+  "accent": "#2b2b96",
+  "shots": [
+   {
+    "src": "images/shots/countit-1.webp",
+    "w": 440,
+    "h": 956
+   },
+   {
+    "src": "images/shots/countit-2.webp",
+    "w": 440,
+    "h": 956
+   },
+   {
+    "src": "images/shots/countit-3.webp",
+    "w": 440,
+    "h": 956
+   },
+   {
+    "src": "images/shots/countit-4.webp",
+    "w": 440,
+    "h": 956
+   }
+  ]
+ },
+ "bonnedatemeteo": {
+  "accent": "#038ffb",
+  "shots": [
+   {
+    "src": "images/shots/bonnedatemeteo-1.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/bonnedatemeteo-2.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/bonnedatemeteo-3.webp",
+    "w": 440,
+    "h": 952
+   },
+   {
+    "src": "images/shots/bonnedatemeteo-4.webp",
+    "w": 440,
+    "h": 952
+   }
+  ]
+ },
+ "meuhbox": {
+  "accent": "#f8a806",
+  "shots": [
+   {
+    "src": "images/shots/meuhbox-1.webp",
+    "w": 520,
+    "h": 509
+   },
+   {
+    "src": "images/shots/meuhbox-2.webp",
+    "w": 520,
+    "h": 520
+   },
+   {
+    "src": "images/shots/meuhbox-3.webp",
+    "w": 520,
+    "h": 527
+   },
+   {
+    "src": "images/shots/meuhbox-4.webp",
+    "w": 520,
+    "h": 528
+   }
+  ]
+ }
+}

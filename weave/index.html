@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weave — Jeu de moto arcade : esquive le trafic (iPhone)</title>
+<meta name="description" content="Weave, jeu d&#x27;arcade gratuit pour iPhone : ta moto file sur une route à deux voies, esquive voitures, nids-de-poule et flaques d&#x27;huile. Un seul geste, vitesse croissante.">
+<meta name="author" content="Florian Marcel">
+<link rel="canonical" href="https://lecram42.github.io/weave/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Florian Marcel — Applications">
+<meta property="og:title" content="Weave — Jeu de moto arcade : esquive le trafic (iPhone)">
+<meta property="og:description" content="Weave, jeu d&#x27;arcade gratuit pour iPhone : ta moto file sur une route à deux voies, esquive voitures, nids-de-poule et flaques d&#x27;huile. Un seul geste, vitesse croissante.">
+<meta property="og:url" content="https://lecram42.github.io/weave/">
+<meta property="og:image" content="https://lecram42.github.io/images/og/weave.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Weave — Jeu de moto arcade : esquive le trafic (iPhone)">
+<meta name="twitter:description" content="Weave, jeu d&#x27;arcade gratuit pour iPhone : ta moto file sur une route à deux voies, esquive voitures, nids-de-poule et flaques d&#x27;huile. Un seul geste, vitesse croissante.">
+<meta name="twitter:image" content="https://lecram42.github.io/images/og/weave.png">
+<meta name="keywords" content="jeu de moto, jeu arcade, esquiver voitures, jeu de course, jeu simple, endless runner">
+<meta name="apple-itunes-app" content="app-id=6807174206">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"MobileApplication","name":"Weave","alternateName":"Weave — Esquive le trafic à moto","description":"Weave, jeu d'arcade gratuit pour iPhone : ta moto file sur une route à deux voies, esquive voitures, nids-de-poule et flaques d'huile. Un seul geste, vitesse croissante.","url":"https://lecram42.github.io/weave/","installUrl":"https://apps.apple.com/fr/app/id6807174206","operatingSystem":"iOS","applicationCategory":"GameApplication","image":"https://lecram42.github.io/images/weave-512.png","screenshot":["https://lecram42.github.io/images/shots/weave-1.webp","https://lecram42.github.io/images/shots/weave-2.webp","https://lecram42.github.io/images/shots/weave-3.webp"],"inLanguage":"fr","author":{"@id":"https://lecram42.github.io/#florian"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Weave est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, entièrement. Les éléments cosmétiques se débloquent en regardant des publicités facultatives."}},{"@type":"Question","name":"Peut-on jouer hors connexion ?","acceptedAnswer":{"@type":"Answer","text":"Oui, la partie fonctionne sans connexion."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Applications","item":"https://lecram42.github.io/"},{"@type":"ListItem","position":2,"name":"Weave","item":"https://lecram42.github.io/weave/"}]},{"@type":"Person","@id":"https://lecram42.github.io/#florian","name":"Florian Marcel","url":"https://lecram42.github.io/","jobTitle":"Développeur indépendant d'applications mobiles","sameAs":["https://apps.apple.com/fr/developer/florian-marcel/id6790743819","https://github.com/Lecram42"]}]}</script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1a1d23;--muted:#5d636e;--border:#e3e6ea;--accent:#3a6df0;--on-accent:#fff;--radius:16px}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--card:#1c1f24;--text:#f0f1f3;--muted:#9ba1ab;--border:#2b2f36;--accent:#6c93ff}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.top{padding-top:18px;padding-bottom:18px;font-size:.92rem}
+.top a{color:var(--muted);text-decoration:none}
+.top a:hover{color:var(--text)}
+h1,h2{line-height:1.2;text-wrap:balance}
+h2{font-size:1.3rem;margin:44px 0 12px}
+.hero{display:flex;gap:22px;align-items:center;padding:28px 0 8px}
+.hero img{width:112px;height:112px;border-radius:26px;flex-shrink:0;box-shadow:0 6px 24px -8px rgba(0,0,0,.35)}
+.hero h1{font-size:2.1rem;margin:0 0 4px}
+.hero .sub{margin:0;color:var(--muted);font-size:1.05rem}
+.lead{font-size:1.15rem;margin:22px 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.meta li{font-size:.82rem;padding:4px 10px;border:1px solid var(--border);border-radius:99px;color:var(--muted)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--app,var(--accent));color:var(--on-app,var(--on-accent));text-decoration:none;font-weight:650;padding:13px 22px;border-radius:12px}
+.cta:hover{filter:brightness(1.08)}
+.cta svg{width:20px;height:20px;fill:currentColor}
+.cta.alt{background:transparent;color:var(--text);border:1px solid var(--border);margin-left:8px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px;margin:30px 0 0;scroll-snap-type:x mandatory}
+.shots img{height:420px;width:auto;border-radius:18px;border:1px solid var(--border);scroll-snap-align:start;flex-shrink:0}
+.shots.land img{height:260px}
+.shots.square img{height:240px;border:0}
+ul.feat{padding-left:1.2em}
+ul.feat li{margin:4px 0}
+details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:8px 0}
+summary{font-weight:600;cursor:pointer}
+details p{margin:10px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;padding:0;margin:0;list-style:none}
+@media (min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;height:100%;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.card img{width:56px;height:56px;border-radius:13px;flex-shrink:0}
+.card h3{font-size:1.05rem;margin:0 0 2px}
+.card p{font-size:.86rem;color:var(--muted);margin:0;line-height:1.4}
+.intro{text-align:center;padding:56px 0 28px}
+.intro h1{font-size:2rem;margin:0 0 10px}
+.intro p{color:var(--muted);margin:0 auto;max-width:560px}
+.about{color:var(--muted)}
+footer{padding-top:48px;padding-bottom:48px;color:var(--muted);font-size:.85rem;text-align:center}
+footer a{color:var(--muted)}
+@media (max-width:520px){.hero{flex-direction:column;align-items:flex-start}.hero h1{font-size:1.8rem}.shots img{height:360px}.cta.alt{margin:10px 0 0}}
+</style>
+</head>
+<body style="--app:#6ba819;--on-app:#111">
+<nav class="wrap top" aria-label="Fil d'Ariane"><a href="/">← Toutes les applications de Florian Marcel</a></nav>
+<main class="wrap">
+<header class="hero">
+<img src="../images/weave-512.png" alt="Icône de l'application Weave" width="112" height="112">
+<div><h1>Weave</h1><p class="sub">Esquive le trafic à moto</p></div>
+</header>
+<p class="lead">Ta moto avance toute seule : à toi de basculer à gauche ou à droite pour esquiver le trafic, de plus en plus vite.</p>
+<ul class="meta"><li>Gratuit</li><li>iPhone</li><li>Jeux · Action</li><li>Sans compte</li></ul>
+<a class="cta" href="https://apps.apple.com/fr/app/id6807174206"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.27z"/></svg>Télécharger sur l'App Store</a>
+<div class="shots "><img src="../images/shots/weave-1.webp" alt="Capture d’écran 1 de Weave" width="440" height="952" loading="lazy" decoding="async"><img src="../images/shots/weave-2.webp" alt="Capture d’écran 2 de Weave" width="440" height="952" loading="lazy" decoding="async"><img src="../images/shots/weave-3.webp" alt="Capture d’écran 3 de Weave" width="440" height="952" loading="lazy" decoding="async"></div>
+<h2>Qu'est-ce que Weave ?</h2>
+<p>Weave est un jeu d&#x27;arcade en vue du dessus. Sur une route à deux voies, esquive voitures, nids-de-poule et flaques d&#x27;huile d&#x27;un simple tap ou swipe. La vitesse ne fait qu&#x27;augmenter : combien de mètres tiendras-tu ?</p><p>Style flat design coloré, prise en main immédiate, une seconde chance par partie, et de l&#x27;équipement cosmétique à débloquer gratuitement : moto, blouson, casque, traînée de vitesse.</p>
+<h2>Fonctionnalités</h2>
+<ul class="feat"><li>Un seul geste : gauche ou droite</li><li>Difficulté et vitesse qui augmentent avec la distance</li><li>Record affiché sur l&#x27;écran d&#x27;accueil et partageable</li><li>Une seconde chance par partie</li><li>Motos, blousons et casques à débloquer gratuitement</li><li>Aucun compte, aucune donnée collectée</li></ul>
+<p><a class="cta" href="https://apps.apple.com/fr/app/id6807174206"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.88c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.27z"/></svg>Obtenir Weave gratuitement</a></p>
+<h2>Questions fréquentes</h2>
+<details><summary>Weave est-il gratuit ?</summary><p>Oui, entièrement. Les éléments cosmétiques se débloquent en regardant des publicités facultatives.</p></details><details><summary>Peut-on jouer hors connexion ?</summary><p>Oui, la partie fonctionne sans connexion.</p></details>
+<p class="about">Liens utiles : <a href="/Weave-legal/support.html">Support</a> · <a href="/Weave-legal/privacy-policy.html">Politique de confidentialité</a></p>
+<h2>Autres applications</h2>
+<ul class="grid"><li><a class="card" href="../souffly/"><img src="../images/souffly-160.webp" alt="Icône de Souffly" width="56" height="56" loading="lazy" decoding="async"><div><h3>Souffly</h3><p>Souffle sur des bougies d&#x27;anniversaire</p></div></a></li><li><a class="card" href="../meuhbox/"><img src="../images/meuhbox-160.webp" alt="Icône de MeuhBox" width="56" height="56" loading="lazy" decoding="async"><div><h3>MeuhBox</h3><p>Retourne ton téléphone, il meugle</p></div></a></li><li><a class="card" href="../phoneopener/"><img src="../images/phoneopener-160.webp" alt="Icône de PhoneOpener" width="56" height="56" loading="lazy" decoding="async"><div><h3>PhoneOpener</h3><p>Décapsule et collectionne</p></div></a></li><li><a class="card" href="../tiltboat/"><img src="../images/tiltboat-160.webp" alt="Icône de TiltBoat" width="56" height="56" loading="lazy" decoding="async"><div><h3>TiltBoat</h3><p>Ton bateau qui tangue au tilt</p></div></a></li><li><a class="card" href="../cornall/"><img src="../images/cornall-160.webp" alt="Icône de CornAll" width="56" height="56" loading="lazy" decoding="async"><div><h3>CornAll</h3><p>Compteur de points cornhole &amp; tournois</p></div></a></li><li><a class="card" href="../bonnedatemeteo/"><img src="../images/bonnedatemeteo-160.webp" alt="Icône de BonneDateMétéo" width="56" height="56" loading="lazy" decoding="async"><div><h3>BonneDateMétéo</h3><p>Choisir sa date selon la météo historique</p></div></a></li><li><a class="card" href="../countit/"><img src="../images/countit-160.webp" alt="Icône de CountIt" width="56" height="56" loading="lazy" decoding="async"><div><h3>CountIt</h3><p>Carnet intime privé &amp; prévention</p></div></a></li></ul>
+</main>
+<footer class="wrap"><p>© 2026 Florian Marcel · Applications conçues et développées en France<br>
+<a href="/">Toutes les applications</a> · <a href="https://apps.apple.com/fr/developer/florian-marcel/id6790743819">Page développeur App Store</a></p></footer>
+</body>
+</html>
