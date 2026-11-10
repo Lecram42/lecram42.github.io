@@ -188,5 +188,30 @@
     "h": 528
    }
   ]
+ },
+ "countedtime": {
+  "accent": "#b07a22",
+  "shots": [
+   {
+    "src": "images/shots/countedtime-1.webp",
+    "w": 440,
+    "h": 956
+   },
+   {
+    "src": "images/shots/countedtime-2.webp",
+    "w": 440,
+    "h": 956
+   },
+   {
+    "src": "images/shots/countedtime-3.webp",
+    "w": 440,
+    "h": 956
+   },
+   {
+    "src": "images/shots/countedtime-4.webp",
+    "w": 440,
+    "h": 956
+   }
+  ]
  }
 }

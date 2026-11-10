@@ -17,6 +17,36 @@ ASSETS = json.load(open(os.path.join(ROOT, "_tools", "assets.json"), encoding="u
 # ---------------------------------------------------------------------------
 APPS = [
     {
+        "slug": "countedtime", "name": "CountedTime", "id": None, "live": False,
+        "subtitle": "Ta vie en semaines, en widget",
+        "title": "CountedTime — Ta vie en semaines : le temps qui reste, en widget (iPhone)",
+        "description": "CountedTime montre ta vie en semaines et le temps qui te reste selon l'espérance de vie de ton pays : grille des semaines, sablier, widget en direct sur l'écran verrouillé. Gratuit, sans compte.",
+        "category": "LifestyleApplication", "store_cat": "Style de vie",
+        "card": "Ta vie en semaines, en widget",
+        "lead": "Ce n'est pas un compte à rebours de la fin. C'est un rappel de tout ce qui reste : ta vie en semaines, et le temps devant toi, d'un coup d'œil.",
+        "about": [
+            "Entre ta date de naissance et ton pays : CountedTime estime une espérance de vie moyenne (données Banque mondiale / ONU) et te montre le temps qui reste de six façons : une grille d'une case par semaine, un compteur en années, jours ou secondes, tes anniversaires à venir, un sablier, la courbe de ta vie et une phrase pour chaque semaine.",
+            "Le widget affiche les jours et les secondes qui défilent en direct sur l'écran verrouillé, l'écran d'accueil ou en mode En veille. Ajoute aussi tes proches : CountedTime estime combien de visites il vous reste et te propose de les appeler tout de suite.",
+            "Une moyenne de population, pas une prédiction : CountedTime ne dit pas combien de temps tu vivras, il t'aide à ne pas oublier que ce temps est précieux.",
+        ],
+        "features": [
+            "Ta vie en semaines : une case par semaine, celle d'aujourd'hui pulse",
+            "Le temps qui reste en années, jours, heures ou secondes",
+            "Widget en direct : écran verrouillé, écran d'accueil, mode En veille",
+            "Une phrase de la semaine, nouvelle chaque lundi",
+            "Tes proches : les visites qu'il vous reste, et un raccourci pour les appeler",
+            "Pas de compte, pas de serveur : tout reste sur ton téléphone",
+        ],
+        "faq": [
+            ("Comment CountedTime calcule-t-il le temps qui reste ?", "À partir de ta date de naissance et de l'espérance de vie moyenne de ton pays (et de ton sexe si tu le précises), d'après les données 2024 de la Banque mondiale et de l'ONU. Tu peux aussi saisir ta propre valeur."),
+            ("Est-ce une prédiction de ma mort ?", "Non. C'est une moyenne de population, pas une prédiction individuelle : l'idée est de rendre le temps visible, pas de faire peur."),
+            ("CountedTime est-il gratuit ?", "Oui. Une seule petite bannière publicitaire, dans les Réglages uniquement, permet à l'app de rester gratuite."),
+            ("Mes données sont-elles envoyées ?", "Non. Pas de compte ni de serveur : ta date de naissance et tes proches restent sur ton téléphone."),
+        ],
+        "keywords": "vie en semaines, quatre mille semaines, memento mori, espérance de vie, compte à rebours de vie, widget temps qui reste, life in weeks",
+        "legal": "CountedTime-legal",
+    },
+    {
         "slug": "souffly", "name": "Souffly", "id": "6804810131",
         "subtitle": "Bougies & cotillons de fête",
         "title": "Souffly — Souffle sur des bougies d'anniversaire virtuelles (iPhone)",
@@ -250,6 +280,17 @@ def store_url(a):
     return f"https://apps.apple.com/fr/app/id{a['id']}"
 
 
+def live(a):
+    """False tant que l'app n'est pas publiée : pas de lien App Store, bouton « Bientôt »."""
+    return a.get("live", True) and bool(a.get("id"))
+
+
+def cta(a, label):
+    if live(a):
+        return f'<a class="cta" href="{store_url(a)}">{APPLE_SVG}{label}</a>'
+    return f'<span class="cta soon" aria-disabled="true">{APPLE_SVG}Bientôt sur l’App Store</span>'
+
+
 def lum(hexc):
     r, g, b = (int(hexc[i:i + 2], 16) / 255 for i in (1, 3, 5))
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
@@ -277,6 +318,8 @@ h2{font-size:1.3rem;margin:44px 0 12px}
 .meta li{font-size:.82rem;padding:4px 10px;border:1px solid var(--border);border-radius:99px;color:var(--muted)}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--app,var(--accent));color:var(--on-app,var(--on-accent));text-decoration:none;font-weight:650;padding:13px 22px;border-radius:12px}
 .cta:hover{filter:brightness(1.08)}
+.cta.soon{opacity:.75;cursor:default}
+.cta.soon:hover{filter:none}
 .cta svg{width:20px;height:20px;fill:currentColor}
 .cta.alt{background:transparent;color:var(--text);border:1px solid var(--border);margin-left:8px}
 .shots{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 14px;margin:30px 0 0;scroll-snap-type:x mandatory}
@@ -372,7 +415,7 @@ def app_page(a):
         "@context": "https://schema.org",
         "@graph": [
             {"@type": "MobileApplication", "name": a["name"], "alternateName": f"{a['name']} — {a['subtitle']}",
-             "description": a["description"], "url": SITE + path, "installUrl": store_url(a),
+             "description": a["description"], "url": SITE + path, **({"installUrl": store_url(a)} if live(a) else {}),
              "operatingSystem": "iOS" + (", Android" if a.get("play") else ""),
              "applicationCategory": a["category"], "image": f"{SITE}/images/{a['slug']}-512.png",
              "screenshot": [SITE + "/" + s["src"] for s in shots],
@@ -387,7 +430,7 @@ def app_page(a):
         ],
     }
     extra = (f'<meta name="keywords" content="{e(a["keywords"])}">\n'
-             f'<meta name="apple-itunes-app" content="app-id={a["id"]}">\n' + ld(app_ld))
+             + (f'<meta name="apple-itunes-app" content="app-id={a["id"]}">\n' if live(a) else "") + ld(app_ld))
     others = "".join(card(o, "../") for o in APPS if o is not a)
     play = (f'<a class="cta alt" href="https://play.google.com/store/apps/details?id={a["play"]}&amp;hl=fr">Google Play</a>'
             if a.get("play") else "")
@@ -402,13 +445,13 @@ def app_page(a):
 </header>
 <p class="lead">{e(a['lead'])}</p>
 <ul class="meta"><li>Gratuit</li><li>{OS_LABEL.get(a['slug'], 'iPhone')}</li><li>{e(a['store_cat'])}</li><li>Sans compte</li></ul>
-<a class="cta" href="{store_url(a)}">{APPLE_SVG}Télécharger sur l'App Store</a>{play}
+{cta(a, "Télécharger sur l'App Store")}{play}
 <div class="shots {shape}">{''.join(f'<img src="../{s["src"]}" alt="Capture d’écran {i} de {e(a["name"])}" width="{s["w"]}" height="{s["h"]}" loading="lazy" decoding="async">' for i, s in enumerate(shots, 1))}</div>
 <h2>Qu'est-ce que {e(a['name'])} ?</h2>
 {''.join(f'<p>{e(p)}</p>' for p in a['about'])}
 <h2>Fonctionnalités</h2>
 <ul class="feat">{''.join(f'<li>{e(f)}</li>' for f in a['features'])}</ul>
-<p><a class="cta" href="{store_url(a)}">{APPLE_SVG}Obtenir {e(a['name'])} gratuitement</a></p>
+<p>{cta(a, "Obtenir " + e(a['name']) + " gratuitement")}</p>
 <h2>Questions fréquentes</h2>
 {''.join(f'<details><summary>{e(q)}</summary><p>{e(r)}</p></details>' for q, r in a['faq'])}
 {legal}
@@ -423,7 +466,7 @@ def app_page(a):
 def index_page():
     title = f"{AUTHOR} — Applications iPhone gratuites : jeux, jouets et outils"
     desc = ("Applications iPhone gratuites créées par Florian Marcel, développeur indépendant : bougies d'anniversaire à souffler, "
-            "boîte à meuh, compteur de cornhole, météo pour choisir la date d'un mariage, jeux de moto et de bateau.")
+            "boîte à meuh, ta vie en semaines en widget, compteur de cornhole, météo pour choisir la date d'un mariage, jeux de moto et de bateau.")
     data = {"@context": "https://schema.org", "@graph": [
         dict(PERSON, description=desc),
         {"@type": "WebSite", "@id": SITE + "/#site", "url": SITE + "/", "name": f"{AUTHOR} — Applications", "inLanguage": "fr",
@@ -440,7 +483,7 @@ def index_page():
 <ul class="grid">{''.join(card(a) for a in APPS)}</ul>
 <section class="about">
 <h2>Des apps qui jouent avec ton téléphone</h2>
-<p>Chaque application exploite un capteur de l'iPhone d'une façon inattendue : le micro pour éteindre des <a href="souffly/">bougies d'anniversaire virtuelles</a>, l'accéléromètre pour faire meugler une <a href="meuhbox/">boîte à meuh</a> ou tanguer un <a href="tiltboat/">petit bateau</a>. À côté des jouets, des outils du quotidien : <a href="cornall/">compter les points au cornhole</a>, <a href="bonnedatemeteo/">choisir la date d'un mariage selon la météo historique</a> ou tenir un <a href="countit/">carnet intime chiffré</a>.</p>
+<p>Chaque application exploite un capteur de l'iPhone d'une façon inattendue : le micro pour éteindre des <a href="souffly/">bougies d'anniversaire virtuelles</a>, l'accéléromètre pour faire meugler une <a href="meuhbox/">boîte à meuh</a> ou tanguer un <a href="tiltboat/">petit bateau</a>. À côté des jouets, des outils du quotidien : <a href="cornall/">compter les points au cornhole</a>, <a href="bonnedatemeteo/">choisir la date d'un mariage selon la météo historique</a> ou tenir un <a href="countit/">carnet intime chiffré</a>. Et pour prendre du recul : <a href="countedtime/">ta vie en semaines</a>, avec le temps qui reste en direct dans un widget.</p>
 <p>Toutes les apps sont gratuites, fonctionnent sans inscription et gardent tes données sur ton téléphone.</p>
 </section>
 </main>
